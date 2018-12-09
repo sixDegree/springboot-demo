@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+  security:
+    user:
+      name: Chen Jin
+      password: 921334
+      roles:
+      - Admin
+
+content: "Test: ${say.prefix} ${say.target}"

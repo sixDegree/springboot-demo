@@ -1,0 +1,18 @@
+# EnableAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.cj.autoconfig.auto.HelloWorldAutoConfiguration
+
+# ApplicationContextInitializer
+org.springframework.context.ApplicationContextInitializer=\
+com.cj.application.initializer.HelloApplicationInitializer,\
+com.cj.application.initializer.WorldApplicationInitializer
+
+# ApplicationListener
+org.springframework.context.ApplicationListener=\
+com.cj.application.listener.HelloApplicationListener,\
+com.cj.application.listener.WorldApplicationListener,\
+com.cj.application.listener.MySmartApplicationListener
+
+# Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+com.cj.application.listener.MySpringApplicationRunListener

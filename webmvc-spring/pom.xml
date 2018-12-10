@@ -7,7 +7,7 @@
     <artifactId>springboot-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>spring-webmvc</artifactId>
+  <artifactId>webmvc-spring</artifactId>
   <packaging>war</packaging>
   
   <dependencies>

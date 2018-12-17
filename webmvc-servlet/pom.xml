@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.cj</groupId>
+    <artifactId>springboot-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>webmvc-servlet</artifactId>
+  <packaging>war</packaging>
+  <dependencies>
+     <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-web</artifactId>
+         <exclusions>
+			  <!-- Exclude the Tomcat dependency -->
+			  <exclusion>
+				  <groupId>org.springframework.boot</groupId>
+				  <artifactId>spring-boot-starter-tomcat</artifactId>
+			  </exclusion>
+		 </exclusions>
+     </dependency> 
+    <!--  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-jetty</artifactId>
+	 </dependency> -->
+	 
+      <!-- Spring Web MVC 依赖 -->
+    <!-- <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-webmvc</artifactId>
+     </dependency -->
+        
+     <!-- Servlet 3.1 API 依赖-->
+     <dependency>
+         <groupId>javax.servlet</groupId>
+         <artifactId>javax.servlet-api</artifactId>
+         <scope>provided</scope>
+     </dependency>
+  </dependencies>
+ 
+  <build>
+   <finalName>demo</finalName>
+   <plugins>
+		
+		<!-- Jetty: 
+		http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html
+		jetty:run
+		 -->
+	     <plugin>
+		  <groupId>org.eclipse.jetty</groupId>
+		  <artifactId>jetty-maven-plugin</artifactId>
+		  <version>9.4.12.v20180830</version>
+		  <configuration>
+		    <scanIntervalSeconds>10</scanIntervalSeconds>
+		     <webApp>
+		      <contextPath>/demo</contextPath>
+		    </webApp>
+		    <httpConnector>
+		    	<port>9090</port>
+		    	<idleTimeout>60000</idleTimeout>
+		    </httpConnector>
+		    <stopKey>foo</stopKey>
+	           <stopPort>9999</stopPort>
+		  </configuration>
+		</plugin>
+
+	</plugins>
+ </build>
+  
+</project>

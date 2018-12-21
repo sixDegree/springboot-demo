@@ -14,6 +14,7 @@
     	<module>webmvc-view</module>
     	<module>webmvc-rest</module>
     <module>webmvc-servlet</module>
+    <module>webflux-reactive</module>
   </modules>
     <packaging>pom</packaging>
 

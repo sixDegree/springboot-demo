@@ -8,14 +8,15 @@
     <modules>
     	<module>springboot-jpa</module>
         <module>springboot-hello</module>
-        <module>springboot-autoconfig</module>
+        <module>auto-config</module>
         <module>webmvc-spring</module>
         <module>webmvc-springboot</module>
     	<module>webmvc-view</module>
     	<module>webmvc-rest</module>
-    <module>webmvc-servlet</module>
-    <module>webflux-reactive</module>
-  </modules>
+	    <module>webmvc-servlet</module>
+	    <module>webflux-reactive</module>
+	    <module>external-config</module>
+    </modules>
     <packaging>pom</packaging>
 
     <name>springboot-demo</name>

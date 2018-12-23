@@ -1,0 +1,15 @@
+# Run Listeners, Refer META-INF/spring.factories (jar:spring-boot):
+org.springframework.boot.SpringApplicationRunListener=\
+com.cj.demo2.listener.ExtendPropertySourcesRunListener
+
+# Application Listeners
+org.springframework.context.ApplicationListener=\
+com.cj.demo2.listener.ExtendPropertySourcesApplicationListener
+
+# EnvironmentPostProcessor
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.cj.demo2.processor.ExtendPropertySourcesEnvironmentPostProcessor
+
+# Application Context Initializers
+org.springframework.context.ApplicationContextInitializer=\
+com.cj.demo2.initializer.ExtendPropertySourcesApplicationContextInitializer

@@ -86,13 +86,14 @@ see webmvc-servlet,webmvc-spring,webmvc-springboot
 | 独立Servlet容器 | 独立Servlet容器 -> 启动 App | Servlet SPI(3.0): `ServletContainerInitializer`; Spring 适配：`SpringServletContainerInitializer`+ `@HandlesTypes(WebApplicationInitializer.class)` |
 | 嵌入式Servlet容器 | App －> 启动嵌入式Servlet容器 | SpringBoot: `ServletContextInitializer`|
 
-3. Spring Boot 嵌入式Servlet容器限制
+3. Servlet -> Spring -> SpringBoot:
 
-| Servlet 特性| 兼容性 | 解决方案 |
-|:-|:-|:-|
-| web.xml | 不支持 | RegistrationBean 或 @Bean 注册 |
-| ServletContainerInitializer | 不支持 | ServletContextInitializer |
-| @WebServlet 等 | 有限支持 | 依赖@ServletComponentScan |
+| Jar | XML方式 | 注解方式 | 编程方式 |
+|:-|:-|:-|:-|
+| Servlet | web.xml | @WebServlet等 | interface `ServletContainerInitializer` |
+| Spring(独立Servlet容器) | &radic; | &radic; | `SpringServletContainerInitializer`(implements ServletContainerInitializer) + `@HandlesTypes(WebApplicationInitializer.class)` |
+| SpringBoot(独立Servlet容器) | &times; | &radic; | `SpringBootServletInitializer`(implements WebApplicationInitializer) <br/> note: 支持使用`ServletContextInitializer`注入的Servlet组件 <br/> eg: <br/> @Bean ServletContextInitializer <br/> @Bean ServletRegisterBean,FilterRegisterBean,ServletListenerRegisterBean (implements ServletContextInitializer)|
+| SpringBoot(嵌入式Servlet容器) | &times; | limited: need to add `@ServletComponentScan` | only can use `ServletContextInitializer` <br/> note: 不支持使用`SpringBootServletInitializer`(implements WebApplicationInitializer) |
 
 4. Servlet异步支持（3.0+）: 
 - HttpServlet
